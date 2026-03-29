@@ -1,3 +1,22 @@
+@media (min-width: 320px) {
+    .hero-name {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+    .project-title {
+        line-height: 2rem;
+        margin-top: 0;
+        margin-bottom: -1rem;
+    }
+}
+@media (min-width: 425px) {
+    .hero-name {
+        display: flex;
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+}
 @media (min-width: 768px) {
     /* ! main */
     #main {
@@ -37,20 +56,6 @@
     .btn {
         padding: 0.9rem 2.2rem;
         gap: 0rem;    
-    }
-    /* ! projects */
-    .projects-gallery {
-        justify-content: center;
-        align-items: flex-start;
-        flex-direction: row;
-        gap: 2rem;
-    }
-    .project-title {
-        overflow-wrap: break-word;
-        word-break: break-word;
-        line-height: 2rem;
-        margin-top: 0rem;
-        margin-bottom: -1rem;
     }
     /* ! about */
     #about {
