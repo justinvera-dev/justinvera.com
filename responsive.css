@@ -52,6 +52,13 @@
         width: 150px;
         justify-content: space-between;
     }
+    /* ! projects */
+    .projects-gallery {
+        justify-content: center;
+        align-items: flex-start;
+        flex-direction: row;
+        margin-top: 3rem;
+    }
     /* ! utility */
     .btn {
         padding: 0.9rem 2.2rem;
