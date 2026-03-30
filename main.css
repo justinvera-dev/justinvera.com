@@ -43,6 +43,14 @@ body {
     font-size: 0.7rem;
     width: 100%;
 }
+.site-nav-name a{
+    text-decoration: none;
+    color: var(--grey);
+    transition: color ease 0.2s;
+}
+.site-nav-name a:hover {
+    color: var(--white);
+}
 .site-nav-links {
     display: flex;
     justify-content: center;
@@ -53,6 +61,10 @@ body {
 .site-nav-links li a {
     text-decoration: none;
     color: var(--grey);
+    transition: color ease 0.2s;
+}
+.site-nav-links li a:hover {
+    color: var(--white);
 }
 /* ! hero */
 .hero {
@@ -99,7 +111,7 @@ body {
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    margin-top: 8rem;
+    margin-top: 4rem;
     border-bottom: var(--border) 1px solid;
     padding-bottom: 4rem;
 }
@@ -132,10 +144,11 @@ body {
     height: 100%;
     width: 100%;
     opacity: 0.6;
-    transition: opacity ease 0.2s;
+    transition: opacity ease 0.2s, transform ease 0.2s;
 }
 .project:hover {
     opacity: 1;
+    transform: scale(1.01);
 }
 .project-image {
     width: 100%;
@@ -191,7 +204,7 @@ body {
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    margin-top: 8rem;
+    margin-top: 4rem;
     border-bottom: var(--border) 1px solid;
     padding-bottom: 4rem;
 }
@@ -228,7 +241,7 @@ body {
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    margin-top: 8rem;
+    margin-top: 4rem;
     border-bottom: var(--border) 1px solid;
     padding-bottom: 4rem;
 }

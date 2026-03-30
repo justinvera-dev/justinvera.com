@@ -42,7 +42,7 @@
     }
     .hero-content {
         display: flex;
-        gap: 4rem;
+        gap: 0rem;
         justify-content: space-between;
         align-items: center;
         flex-direction: row;
