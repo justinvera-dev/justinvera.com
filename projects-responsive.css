@@ -1,0 +1,36 @@
+/* ! Projects */
+@media (min-width: 320px) {
+    .project-title {
+        line-height: 2rem;
+        margin-top: 0rem;
+        margin-bottom: -1rem;
+    }
+}
+@media (min-width: 425px) {
+    .projects-gallery {
+        margin-top: 2rem;
+    }
+}
+@media (min-width: 768px) {
+    .projects-gallery {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+        align-items: start;
+    }
+    .project {
+        width: auto;
+        height: auto;
+    }
+    .project-content {
+        grid-template-columns: 90% 10%;
+    }
+    .open-link {
+        display: block;
+    }
+}
+@media (min-width: 1024px) {
+    .projects-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

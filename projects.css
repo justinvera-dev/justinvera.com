@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Oswald:wght@200..700&display=swap');:root {
+    --black: hsl(0, 0%, 4%);
+    --white: hsl(0, 0%, 100%);
+    --white-transparent: hsla(0, 0%, 100%, 0.3);
+    --grey: hsl(0, 0%, 63%);
+    --border: hsl(0, 0%, 16%);
+    --jetbrains: "JetBrains Mono", monospace;
+    --dmsans: "DM Sans", sans-serif;
+    --oswald: Oswald, sans-serif;
+}
+html {
+    box-sizing: border-box;
+}
+body {
+    background-color: var(--black);
+    margin: 0rem 1.5rem;
+}
+/* ! Tag Search */
+.tag-search {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 2rem;
+    width: 100%;
+}
+#tag-search-label {
+    text-transform: uppercase;
+    font-family: var(--oswald);
+    color: var(--white);
+    letter-spacing: 2px;
+    font-weight: 400;
+}
+#tag-search {
+    font-family: var(--jetbrains);
+    font-size: 1rem;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    color: var(--white);
+    margin-top: 1rem;
+    outline: none;
+}
+#tag-search:focus {
+    border-bottom: var(--white) 1px solid;
+}
+/* ! Projects */
+#projects {
+    margin-top: 3rem;
+}
+.back-link {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: var(--jetbrains);
+    color: var(--grey);
+    font-size: 14px;
+}
+.projects-teaser {
+    margin-top: 3rem;
+}
+.projects-title {
+    font-size: 3rem;
+    line-height: 4rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.projects-gallery {
+    margin-top: 1rem;
+}
+/* ! Project */
+.project {
+    border: 1px solid var(--border);
+}
+.project-content {
+    grid-template-columns: 100% 0%;
+    padding: 0 1rem 1rem 1rem;
+}
+.open-link {
+    display: none;
+}
