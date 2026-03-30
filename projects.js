@@ -1,3 +1,4 @@
+// ! Project Generator
 const projectList = [
     {
         title: "Abhijith Thomas Photography",
@@ -43,6 +44,7 @@ projectList.forEach(project => {
     </article>
     `
 })
+// ! Search Function
 const projects = document.querySelectorAll(".project");
 const tagSearch = document.querySelector("#tag-search");
 tagSearch.addEventListener("input", function () {
