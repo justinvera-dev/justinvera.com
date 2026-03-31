@@ -4,6 +4,7 @@ const projectList = [
         title: "Abhijith Thomas Photography",
         desc: "A dark, minimal portfolio built to let the photography speak with a clean gallery layout with lightbox viewing, optimized image delivery, and an integrated contact form",
         image: "/abhijith-thomas.png",
+        alt: "Abhijith Thomas Photography website — custom portfolio built by Justin Vera, freelance web developer. This site is a dark, minimal portfolio website built to let the photography speak with a clean gallery layout with lightbox viewing, optimized image delivery, and an integrated contact form",
         tags: ["HTML", "CSS", "JS", "Python"],
         link: "https://abhijiththomasphotography.com/"
     },
@@ -11,6 +12,7 @@ const projectList = [
         title: "Hyde's Cuts & Razors",
         desc: "A bold, bright site for a local barbershop built to attract walk-ins with an integrated Google Maps location and contact form.",
         image: "/hyde.png",
+        alt: "Hyde's Cuts & Razors website — custom portfolio built by Justin Vera, freelance web developer. This website is a bold, bright site for a local barbershop built to attract walk-ins with an integrated Google Maps location and contact form.",
         tags: ["HTML", "CSS"],
         link: "#"
     },
@@ -18,6 +20,7 @@ const projectList = [
         title: "Sunnyside Agency",
         desc: "An artsy, unconventional landing page for a creative agency with bold layouts, expressive design, and a look that breaks the mold.",
         image: "/sunnyside.png",
+        alt: "Sunny Side Agency website — custom portfolio built by Justin Vera, freelance web developer. This site is an artsy, unconventional landing page for a creative agency with bold layouts and expressive design.",
         tags: ["HTML", "CSS"],
         link: "https://sunnyside-agency-landing-page-main-peach.vercel.app/"
     },
@@ -29,7 +32,7 @@ projectList.forEach(project => {
     <article class="project">
         <div class="project-image">
             <a href="${project.link}" target="_blank">
-                <img src="${project.image}" alt="">
+                <img src="${project.image}" alt="${project.alt}">
             </a>
         </div>
         <div class="project-content">
