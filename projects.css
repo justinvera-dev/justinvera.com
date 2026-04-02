@@ -13,7 +13,7 @@ html {
 }
 body {
     background-color: var(--black);
-    margin: 0rem 1.5rem;
+    margin: 0rem 3rem;
 }
 /* ! Tag Search */
 .tag-search {
