@@ -15,7 +15,7 @@ html {
 body {
     background-color: var(--black);
     margin: 0;
-    margin: 0 3rem;
+    margin: 0 1rem;
 }
 /* ! main */
 #main {
@@ -200,13 +200,97 @@ body {
 .projects-btn {
     margin-top: 5rem;
 }
+/* ! services */
+#services {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 4rem;
+    /* border-bottom: var(--border) 1px solid; */
+    padding-bottom: 4rem;
+    width: 100%;
+}
+.services-teaser {
+    text-transform: uppercase;
+    font-family: var(--jetbrains);
+    color: var(--grey);
+    font-size: 14px;
+}
+.services-title {
+    text-transform: uppercase;
+    font-family: var(--oswald);
+    font-weight: 700;
+    color: var(--white);
+    font-size: 2rem;
+    margin-top: 1rem;
+}
+/* services start */
+.services-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+.service-card {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+    "title price"
+    "desc desc";
+    justify-content: center;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+    gap: 10px;
+    max-height: 130px;
+    min-height: 60px;
+    height: auto;
+    width: 100%;
+}
+.service-card-title {
+    font-family: var(--dmsans);
+    font-size: 1rem;
+    color: var(--white);
+    grid-area: title;
+    margin:0;
+}
+.service-card-desc {
+    font-family: var(--jetbrains);
+    font-size: 0.8rem;
+    color: var(--grey);
+    grid-area: desc;
+    margin:0;
+    line-height: 1.2rem;
+}
+.service-card-price {
+    font-family: var(--jetbrains);
+    font-size: 0.8rem;
+    color: var(--grey);
+    grid-area: price;
+    justify-self: flex-end;
+}
+.service-card-price:hover {
+    color: var(--white);
+}
+.disclaimer {
+    width: 100%;
+    font-family: var(--jetbrains);
+    font-size: 0.8rem;
+    color: var(--grey);
+    align-self: flex-end;
+}
 /* ! about */
 #about {
     display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    margin-top: 4rem;
+    margin-top: 1rem;
     border-bottom: var(--border) 1px solid;
     padding-bottom: 4rem;
 }
@@ -261,6 +345,12 @@ body {
     font-size: 2rem;
     margin-top: 1rem;
 }
+.contact-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
 .contact-desc {
     font-family: var(--dmsans);
     color: var(--grey);
@@ -275,6 +365,52 @@ body {
     color: var(--white);
     font-size: 1.4rem;
     margin-top: 1rem;
+}
+/* ! form */
+form {
+    background-color: var(--charcoal);
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+form label {
+    font-family: var(--dmsans);
+    color: var(--white);
+    margin-top: 2rem;
+    align-self: flex-start;
+}
+.form-input {
+    background: transparent;
+    border: 1px solid var(--grey);
+    font-size: 1rem;
+    font-family: var(--jetbrains);
+    color: var(--grey);
+    padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+textarea {
+    line-height: 1.5rem;
+}
+
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px var(--charcoal) inset;
+  -webkit-text-fill-color: var(--light-grey);
+}
+.form-input:focus {
+    outline:none;
+}
+.message {
+    transition: border-color 0.3s ease;
+    font-size: 0.8rem;
+}
+.message.highlight {
+    border-color: var(--white);
 }
 /* ! footer */
 #footer {
@@ -316,4 +452,10 @@ body {
 .btn:hover {
     background-color: var(--white);
     color: var(--black);
+}
+.form-btn {
+    background-color: transparent;
+    border: 1px solid var(--grey);
+    margin-top: 1rem;
+    width: 100%;
 }

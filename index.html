@@ -138,6 +138,15 @@
         </section>
         <a href="projects.html" class="btn projects-btn">See all projects <i class="fa-solid fa-arrow-right"></i></a>
     </section>
+    <section id="services">
+        <div class="services-intro">
+            <p class="services-teaser">02 / Services</p>
+            <h2 class="services-title">What I have to offer</h2>
+        </div>
+        <!-- services start -->
+        <div class="services-grid">
+        </div>
+    </section>  
     <section id="about">
         <div class="about-intro">
             <p class="about-teaser">02 / Who Am I?</p>
@@ -177,6 +186,22 @@
         <div class="contact-content">
             <p class="contact-desc">Have a project in mind or just want to connect? Send me an email.</p>
             <p class="contact-email">justinvera.dev@gmail.com</p>
+            <form action="https://api.web3forms.com/submit" method="POST" id="form">
+                <input type="hidden" name="access_key" value="c8b9eb09-e036-4771-b607-6519250f7a47">
+                <label for="full-name">Full name:</label>
+                <input class="form-input full-name" type="text" name="full-name" id="full-name" required>
+
+                <label for="email">Email Address:</label>
+                <input class="form-input email" type="email" name="email"  id="email" required>
+
+                <label for="phone">Phone number:</label>
+                <input class="form-input phone" type="text" name="phone"  id="phone" required>
+
+                <label for="message">Write your message:</label>
+                <textarea class="form-input message" name="message" rows="8" id="message" required></textarea>
+
+                <input type="hidden" name="redirect" value="http://abhijith-thomas.vercel.app/thank-you.html">
+                <button type="submit" class="btn form-btn">Submit Message</button>            </form>
         </div>
     </section>
     <footer id="footer">
@@ -184,4 +209,5 @@
         <a href="#main" class="back-to-top">Back to top</a>
     </footer>
 </body>
+<script src="index.js"></script>
 </html>

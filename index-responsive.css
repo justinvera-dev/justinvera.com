@@ -10,7 +10,15 @@
         margin-bottom: -1rem;
     }
 }
+@media (min-width: 375px) {
+    body {
+        margin: 0 2rem;
+    }
+}
 @media (min-width: 425px) {
+    body {
+        margin: 0 3rem;
+    }
     .hero-name {
         display: flex;
         flex-direction: row;
@@ -68,6 +76,19 @@
         width: auto;
         height: auto;
     }
+    /* ! services */
+    #services {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: 
+        "left right";
+        margin-top: 4rem;
+        border-bottom: var(--border) 1px solid;
+    }
+    .services-title {
+        width: 50%;
+    }
     /* ! utility */
     .btn {
         padding: 0.9rem 2.2rem;
@@ -102,6 +123,10 @@
     }
     .contact-content {
         grid-area: 'right';
+    }
+    /* ! form */
+    .message {
+        font-size: 1rem;
     }
     /* ! footer */
     #footer {
