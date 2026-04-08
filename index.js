@@ -66,7 +66,7 @@ const message = document.querySelector(".message");
 const serviceCards = document.querySelectorAll(".service-card-price");
 serviceCards.forEach(serviceCard => {
     serviceCard.addEventListener("click", function () {
-        contact.scrollIntoView({
+        message.scrollIntoView({
             behavior: "smooth"
         });
         const service = this.dataset.service;
