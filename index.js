@@ -7,13 +7,13 @@ const serviceList = [
     {
         title: "Landing pages",
         desc: "A single landing page designed to turn visitors into leads.",
-        price: "300",
+        price: "500",
         dataService: "Landing Page"
     },
     {
         title: "Event websites",
         desc: "A clean, time sensitive site designed to promote your event's details such as dates, registration, etc.",
-        price: "400",
+        price: "600",
         dataService: "Event website"
     },
     {
@@ -25,7 +25,7 @@ const serviceList = [
     {
         title: "Portfolio sites",
         desc: "A clean and visually stunning site to showcase your portfolio and create a strong first impression to clients or employers.",
-        price: "500",
+        price: "750",
         dataService: "Portfolio website"
     },
     {
