@@ -80,6 +80,6 @@ I'd love to learn more about pricing, timeline, and what the process looks like.
         message.classList.add("highlight");
         setTimeout(() => {
             message.classList.remove("highlight");
-        }, 1200);
+        }, 1500);
     })
 });
