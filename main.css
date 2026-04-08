@@ -277,13 +277,6 @@ body {
 .service-card-price:hover {
     color: var(--white);
 }
-.disclaimer {
-    width: 100%;
-    font-family: var(--jetbrains);
-    font-size: 0.8rem;
-    color: var(--grey);
-    align-self: flex-end;
-}
 /* ! about */
 #about {
     display: flex;
@@ -406,11 +399,11 @@ textarea:-webkit-autofill {
     outline:none;
 }
 .message {
-    transition: border-color 0.3s ease;
+    transition: border 0.3s ease;
     font-size: 0.8rem;
 }
 .message.highlight {
-    border-color: var(--white);
+    border: 2px solid var(--white);
 }
 /* ! footer */
 #footer {
