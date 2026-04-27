@@ -41,7 +41,7 @@ body {
     font-family: var(--jetbrains);
     color: var(--grey);
     text-transform: uppercase;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     width: 100%;
 }
 .site-nav-name a {
@@ -58,6 +58,7 @@ body {
     align-items: center;
     list-style: none;
     gap: 0.8rem;
+    padding:0;
 }
 .site-nav-links li a {
     text-decoration: none;

@@ -25,13 +25,20 @@
         gap: 0.5rem;
     }
     .site-nav {
-        font-size: 0.8rem;
+        font-size: 0.7rem;
     }
     .contact-email {
         font-size: 1.5rem;
     }
 }
 @media (min-width: 768px) {
+    /* ! nav */
+    .site-nav {
+        font-size: 0.8rem;
+    }
+    .site-nav-links {
+        gap: 1rem;
+    }
     /* ! main */
     #main {
         height: 95vh;
