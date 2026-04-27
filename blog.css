@@ -1,0 +1,111 @@
+/* ! Projects */
+#blog {
+    margin-top: 3rem;
+    padding-left: 1rem;
+}
+.back-link {
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: var(--jetbrains);
+    color: var(--grey);
+    font-size: 14px;
+}
+.blog-teaser {
+    font-family: var(--jetbrains);
+    font-size: 14px;
+    color: var(--grey);
+    text-transform: uppercase;
+    margin-top: 3rem;
+    letter-spacing: 3px;
+}
+.blog-title {
+    font-family: var(--oswald);
+    font-weight: 700;
+    font-size: 3rem;
+    text-transform: uppercase;
+    color: var(--white);
+    line-height: 4rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+/* ! Tag Search */
+.tag-search-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 1rem;
+    width: 100%;
+    position: relative;
+}
+.tag-search {
+    font-family: var(--jetbrains);
+    font-size: 1rem;
+    background: transparent;
+    border: 1px solid var(--border);
+    padding: 10px 20px;
+    color: var(--white);
+    margin-top: 1rem;
+    padding-left: 3rem;
+    outline: none;
+    width: 200px;
+    max-width: 450px;
+}
+.tag-search-icon {
+    position: absolute;
+    left: 1rem;
+    bottom: 12px
+}
+.tag-search-icon i {
+    color: var(--border);
+}
+/* ! blog posts */
+.blog-posts {
+    margin-top: 2rem;
+}
+.blog-post {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 1.5rem;
+    margin-top: 1.5rem;
+}
+.blog-post-details {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.6rem;
+}
+.blog-post-tags {
+    font-family: var(--jetbrains);
+    font-size: 11px;
+    color: var(--grey);
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+    border-right: 1px solid var(--border);
+    padding-right: 0.5rem;
+}
+.blog-post-date {
+    font-family: var(--jetbrains);
+    font-size: 11px;
+    color: var(--grey);
+    letter-spacing: 2px;
+}
+.blog-post-title {
+    font-family: var(--oswald);
+    font-weight: 700;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-top: 0.7rem;
+}
+.blog-post-desc {
+    font-family: var(--dmsans);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.3rem;
+    color: var(--grey);
+    margin-top: 0.7rem;
+}
