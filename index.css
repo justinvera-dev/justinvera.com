@@ -351,6 +351,14 @@ body {
     margin-top: 1rem;
     line-height: 1.5rem;
 }
+.contact-desc a {
+    color: var(--grey);
+    text-decoration: underline;
+    transition: color ease 0.2s;
+}
+.contact-desc a:hover {
+    color: var(--white);
+}
 .contact-email {
     text-transform: uppercase;
     font-family: var(--oswald);
