@@ -1,7 +1,7 @@
 /* ! Projects */
 #blog {
-    margin-top: 3rem;
-    width: 100%;
+    margin: 3rem auto;
+    max-width: 1000px;
 }
 .back-link {
     text-decoration: none;
@@ -110,4 +110,13 @@
     color: var(--grey);
     margin:0;
     margin-top: 0.4rem;
+}
+.no-results {
+    font-family: var(--oswald);
+    font-weight: 700;
+    font-size: 1.2em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin:0;
+    margin-top: 0.5rem;
 }
