@@ -17,3 +17,10 @@ body {
     margin: 0;
     margin: 0 1rem;
 }
+a {
+    text-decoration: none;
+    transition: color ease 0.2s;
+}
+a:hover {
+    color: var(--white);
+}

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/global.css">
+    <link rel="stylesheet" href="../../post.css">
+    <link rel="stylesheet" href="../../post-content.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="back-nav">
+            <a href="../../index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> All posts</a>
+        </nav>
+        <div class="post-layout">
+            <article>
+                <div class="post">
+                    <div class="post-details">
+                        <div class="post-tags">
+                            <div class="post-tag">Writeup</div>
+                        </div>
+                        <div class="post-date">April 27, 2026 | 12:52AM</div>
+                    </div>
+                    <h1 class="post-title">Natas: Web Exploits Walkthrough Levels (0-4)</h1>
+                    <!-- post starts -->
+                    <div class="toc-sidebar"></div>
+                    <div class="post-content">
+                        <p>I am a frontend web developer and I've come across NATAS before but have not 
+                            documented and taken cybersecurity challenges as seriously as I have now and wanted
+                        it to be my first blog post. I chose NATAS specifically over other platforms like PicoCTF or HackTheBox
+                    as I am most familiar with Web Development. I do plan to eventually branch out and cover other aspects of Cyber
+            Security but for now I plan to document my journey through the NATAS levels. I hope this writeup helps beginners like myself 
+            find comfort and more understanding about the topic.</p>
+                        <h2>Level 0 > Level 1</h2>
+                        <p>The challenge starts with the message:</p>
+                        <img src="./assets/level-0.gif" alt="You can find the password for the next level on this page">
+                        <p>So, I did step 1 of any web exploitation challenge which are:</p>
+                        <ol>
+                            <li>Right click</li>
+                            <li>Inspect the page or hit the F12 key</li>
+                            <li>Collapse any HTML elements shown in the Elements tab.</li>
+                        </ol>
+                        <p>I collapsed the <code>&lt;div#content&gt;</code> tag found inside the <code>&lt;body&gt;</code> tag and found the flag in a comment.</p>
+                        
+                        <pre><code class="language-html">&lt;div id="content"&gt;
+    You can find the password for the next level on this page.
+    &lt;!--The password for natas1 is "gofindoutforyourself:)" --&gt;
+&lt;/div&gt;</code></pre>
+                        <h2>Level 1 > Level 2</h2>
+                        <p>The challenge starts with the same website layout but with a different message:</p>
+                        <img src="./assets/level-1.gif" alt="You can find the password for the next level on this page, but rightclicking has been blocked!">
+                        <p>As listed previously, another way to inspect web pages is using your F12 Key.
+                        Now that we can successfuly inspect web pages again, let's investigate the website as we did before on Level 0.</p>
+                        <p>As expected, the flag is in the same <code>&lt;div#content&gt;</code> tag as before.</p>
+                        <pre><code class="language-html">&lt;div id="content"&gt;
+    You can find the password for the
+    next level on this page, but rightclicking has been blocked!
+
+    &lt;!--The password for natas2 is "gofindoutforyourself:)" --&gt;
+&lt;/div&gt;</code></pre>
+                        <h2>Level 2 > Level 3</h2>
+                        <p>We have the same layout as before but this time when we inspect the page there are no signs of a flag in the 
+                        <code class="">&lt;div#content&gt;</code>
+                        tag. However, there is a new image file so I'm thinking the flag has something to do with this image file.</p>
+                        <pre><code class="language-html">&lt;div id="content"&gt;
+    There is nothing on this page
+    &lt;img src="files/pixel.png"&gt;
+&lt;/div&gt;</code></pre>
+                        <p>I notice that the file source is <code>src="files/pixel.png</code>, the important part here is the <code>files</code> directory where this <code>pixel.png</code> lives.</p>
+                        <p>Now I'm curious if we can access that directly so I type <code>/files</code> into the URL bar which results in <code>http://natas2.natas.labs.overthewire.org/files/</code>
+                            and we are directed to:</p>
+                        <img src="./assets/files.png" alt="">
+                        <p>I then see <code>users.txt</code> and at this point I know we've got the flag. I open it and check it out:</p>
+                        <pre>
+<code class="language-txt"># username:password
+alice:BYNdCesZqW
+bob:jw2ueICLvT
+charlie:G5vCxkVV3m
+natas3:finditforyourself:)
+eve:zo4mJWyNj2
+mallory:9urtcpzBmH
+</code></pre>
+                        <p>We then see a list of usernames with their corresponding passwords. We can also see that <code>natas3</code> is one of the username with its password being the flag we've been looking for!</p>
+                        <!-- ... -->
+                        <h2>Level 3 > Level 4</h2>
+                        <p>We are presented with this message:</p>
+                        <img src="./assets/level-3.gif" alt="There is nothing on this page">
+                        <p>So, let's do the usual and inspect the web page.</p>
+                        <pre><code class="language-html">
+&lt;div id="content"&gt;
+    There is nothing on this page
+    &lt;!--No more information leaks!! Not even Google will find it this time..--&gt
+&lt;/div&gt;
+                        </code></pre>
+                        <p>Mhmmm that's very weird. Everything that's written down in a CTF like a comment like this should be taken as a hint. 
+                        The comment is implying that Google the search engine <strong>cannot access</strong> the resource or file we are looking for.</p>
+                        <p>Therefore, let's Google search how a website achieves this:</p>
+                        <img src="./assets/robots.png" alt="">
+                        <p>The results suggests using a <code>robots.txt</code> and <code>noindex</code> tags and with more investigation we will learn that <code>robot.txt</code> is used to block <strong>files or certain directories</strong> while <code>noindex</code> is used to prevent a page from appearing in search results but <strong>still allowing</strong> google to crawl it.</p>
+                        <p>In our case, the comment says even Google cannot <strong>find</strong> the file we are looking for or in other words Google cannot <strong>crawl</strong> this resource at all. Therefore, we can conclude that this site is using a <code>robots.txt</code> file.</p>
+                        <p>We need to gain access to this <code>robots.txt</code> file to revert its effects so we can access the resource we want that most definitely has the flag we want.</p>
+                        <p>But how do we find a <code>robots.txt</code> file of a website? If we Google where this <code>robot.txt</code> file is usually located in websites:</p>
+                        <img src="./assets/robots-google.png" alt="">
+                        <p>Results will show you that it has to be located in the <strong>root directory</strong>. Therefore, we can type <code>/robots.txt</code> onto our URL and we should get be able to access it.</p>
+                        <pre><code class="language-txt">User-agent: *
+Disallow: /s3cr3t/</code></pre>
+                        <p>Now, we get a text file and its content stating to disallow a directory called <code>/s3cr3t/</code>,  let's try accessing this by adding it onto our URL.</p>
+                        <img src="./assets/secret.png" alt="">
+                        <p>We now see a familiar file <code>users.txt</code> so lets open it!</p>
+                        <pre><code>natas4:finditforyourself:)</code></pre>
+                        <p>And as expected, the flag is located inside.</p>
+                        <h2>Level 4 -> Level 5</h2>
+                        <p>The challenge message shows:</p>
+                        <img src="./assets/level-4.gif" alt="">
+                        <p>This is an interesting message and I currently don't really know what it means. Let's explore what this refresh link does.</p>
+                        <img src="./assets/level-4-refresh.gif" alt="">
+                        <p>When I hit the refresh link all it changes the message to this and directs us to a new file called <code>index.php</code></p>
+                        <p>Inspecting the HTML code leaves us with no clues.</p>
+                        <pre><code class="language-html">&lt;div id="content"&gt;
+    Access disallowed. You are visiting from "http://natas4.natas.labs.overthewire.org/index.php"
+    while authorized users should come only from "http://natas5.natas.labs.overthewire.org/"
+    &lt;br&gt;
+    &lt;div id="viewsource"&gt;&lt;a href="index.php"&gt;Refresh page&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        <p>This challenge is going to be alot tougher as this doesn't seem to be located in the 
+                            client side such as checking for comments in comments in the source code or manipulating
+                        URLs to get to certain directories. The message itself is also a hint to the concept of this challenge.
+                    The problem is that I do not know this concept myself making it very hard to learn something you don't know the name of.
+                But we shall try our best.</p>
+                        <p>After 15 or so minutes of struggle, I genuinely wanted to give up and look up the answer.
+                            But that would have defeated the whole purpose of this writeup.
+                        </p>
+                        <p>So, I regrouped and I start Googling things like:</p>
+                        <ul>
+                            <li>"visiting from site access web security"</li>
+                            <li>"how to let websites ignore where i came from"</li>
+                            <li>"how to change the link I came from when accessing a site?"</li>
+                        </ul>
+                        <p>Most of the results mentioned location based searching where it talked about changing 
+                            your geographical location when accessing websites which was not what I was looking for. 
+                            I wanted to find a way if the site can ignore or change what website link I came from and let me through and this particular result interested me.</p>
+                        <img src="./assets/referer-result.png" alt="">
+                        <p>So, maybe if I could somehow access and change it I could maybe go through was my thought process. 
+                            I then Google how to change or modify this referer header mentioned and it led me to various rabbit holes
+                            that did not give me anything.
+                        </p>
+                        <p>I then go back to the NATAS home page and see that tools listed include <strong>curl</strong> and <strong>zap proxy</strong>. I Google what these are and get to work.
+I learn that curl is a tool built-in to the command prompt or other terminals if your using Mac or Linux and that its used to make <code>HTTP Requests</code> 
+which means there could be a way to make a http request that has a specific referer header that is different!</p>
+                        <p>I open Command Prompt and before running <code>curl</code> into my command prompt. I want to first learn how to even
+                        use curl as I know nothing about it.</p>
+                        <p>Here is the <a href="https://curl.se/docs/tutorial.html">documentation page</a> I checked out. I use <code>Ctrl + F</code> and search for <strong>"Referer"</strong> to speed things up and see this:</p>
+                        <img src="./assets/referer-tutorial.png" alt="">
+                        <p>So, I try this exact command but changing the URLs to the ones we want:</p>
+                        <pre><code class="language-bash">curl -e http://natas5.natas.labs.overthewire.org/ http://natas4.natas.labs.overthewire.org/index.php</code></pre>
+                        <p>This ended up not working and resulting in an error. I assume its because we have to authenticate with a <strong>username</strong> and <strong>password</strong> 
+                            like we do with the other levels. So, I Google search <strong>"how to use username and password in curl"</strong>
+ and see that its as simple as adding a <code>-u</code> flag followed with your <strong>username</strong> and <strong>password</strong> which results in:</p>
+                        <pre><code class="language-bash">curl -u "natas4:QryZXc2e0zahULdHrtHxzyYkj59kUxLQ</code></pre>
+                        <p>Now, let's add what we have from before:</p>
+                        <pre><code class="language-bash">curl -u "natas4:QryZXc2e0zahULdHrtHxzyYkj59kUxLQ" -e http://natas5.natas.labs.overthewire.org/ http://natas4.natas.labs.overthewire.org/index.php</code></pre>
+                        <p>There we go! We get a response back and its the <strong>Access Granted</strong> page!</p>
+                        <pre><code class="language-html">&lt;head&gt;
+    &lt;!-- This stuff in the header has nothing to do with the level --&gt;
+    &lt;link rel="stylesheet" type="text/css" href="http://natas.labs.overthewire.org/css/level.css"&gt;
+    &lt;link rel="stylesheet" href="http://natas.labs.overthewire.org/css/jquery-ui.css" /&gt;
+    &lt;link rel="stylesheet" href="http://natas.labs.overthewire.org/css/wechall.css" /&gt;
+    &lt;script src="http://natas.labs.overthewire.org/js/jquery-1.9.1.js"&gt;&lt;/script&gt;
+    &lt;script src="http://natas.labs.overthewire.org/js/jquery-ui.js"&gt;&lt;/script&gt;
+    &lt;script src="http://natas.labs.overthewire.org/js/wechall-data.js"&gt;&lt;/script&gt;
+    &lt;script src="http://natas.labs.overthewire.org/js/wechall.js"&gt;&lt;/script&gt;
+    &lt;script&gt;var wechallinfo = { "level": "natas4", "pass": "QryZXc2e0zahULdHrtHxzyYkj59kUxLQ" };&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;natas4&lt;/h1&gt;
+    &lt;div id="content"&gt;
+        Access granted. The password for natas5 is 0n35PkggAPm2zbEpOU802c0x0Msn1ToK
+        &lt;br/&gt;
+        &lt;div id="viewsource"&gt;&lt;a href="index.php"&gt;Refresh page&lt;/a&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                    <p>We can also see the flag in the usual place <code>&lt;div#content&gt;</code>, that took a really long time... 
+                        and that's also enough NATAS for today :) </p>
+                    <h2>Takeaways</h2>
+                    <p>The beginning levels were quite a breeze for me but it was still good to get into the habit of doing those
+                        challenges. However, Level 4 made my head explode multiple times but I did learn alot which is good!
+                        Here are the takeaways you should have from these challenges:
+                    </p>
+                    <h3>Level 0</h3>
+                    <p>Do not leave sensitive data in HTML comments and think nobody can see them. 
+                        It is true that it does not get rendered onto the page but anyone can still see the
+                        source code and that includes comments.
+                    </p>
+                    <h3>Level 1</h3>
+                    <p>Disabling right click is not a way an effective way to combat Level 0's vulnerability.
+                        It's more like a very minor inconvenience <em>if you don't have a keyboard!</em>.
+                    </p>
+                    <h3>Level 2</h3>
+                    <p>This web vulnerability is called directory listing. It is when a website exposes all its contents
+                        of a folder because no <code>index.html</code> exists and directory listing isn't disabled.
+                    </p>
+                    <h3>Level 3</h3>
+                    <p>For <code>robots.txt</code> to work and accessible to search engines, it has to be public by design.
+                    Therefore, do not hide sensitive directories in a public file such as <code>robots.txt</code>.
+                    This is the equivalent of putting a "DO NOT OPEN" sign on notebook and expecting no one opens it.</p>
+                    <h3>Level 4</h3>
+                    <p>The referer header is data that dictates what link you came from. This referer header is sent by
+                        the browser and therefore can be set to anything with the right tools such as curl which I can tell
+                        is a tool I will probably need going forward. Relying on a referer header for access control is ineffective
+                        and can be easily broken. 
+                    </p>
+                    </div>
+                    <!-- post ends -->
+                </div>
+            </article>
+        </div>
+        <footer>
+            <nav class="back-nav">
+                <a href="../../index.html" class="back-link footer-back-link"><i class="fa-solid fa-arrow-left"></i> All posts</a>
+            </nav>
+            <p class="footer-copyright">&copy; 2026 Justin Vera</p>
+        </footer>
+    </div>
+    <script src="../table.js"></script>
+</body>
+</html>

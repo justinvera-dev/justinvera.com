@@ -48,6 +48,7 @@
 }
 .site-nav-links li a:hover {
     color: var(--white);
+    text-decoration: underline;
 }
 /* ! hero */
 .hero {

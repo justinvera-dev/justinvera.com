@@ -1,0 +1,119 @@
+/* headings */
+.post-content h1 {
+    font-family: var(--oswald);
+    font-size: 2.4rem;
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: 1rem;
+}
+.post-content h2 {
+    font-family: var(--oswald);
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+}
+.post-content h3 {
+    font-family: var(--dmsans);
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 0rem;
+}
+/* paragraph */
+.post-content p {
+    font-family: var(--dmsans);
+    line-height: 1.8;
+    color: var(--grey);
+}
+/* inline code */
+.post-content p code {
+    font-family: var(--jetbrains);
+    background: var(--border);
+    color: var(--white);
+    padding: 0.12rem 0.3rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+}
+/* code block */
+.post-content pre {
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #444 #1a1a1a;
+}
+.post-content pre::-webkit-scrollbar {
+    height: 6px;
+}
+
+.post-content pre::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+.post-content pre::-webkit-scrollbar-thumb {
+    background: #444;
+    border-radius: 3px;
+}
+.post-content pre::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}
+.post-content pre {
+    background: #1a1a1a;
+    border-left: 3px solid yellow;
+    padding: 1.25rem;
+    border-radius: 6px;
+    overflow-x: auto;
+}
+.post-content code {
+    font-family: monospace;
+    font-size: 0.9rem;
+    color: #e0e0e0;
+}
+/* blockquote */
+.post-content blockquote {
+    border-left: 3px solid yellow;
+    padding-left: 1rem;
+    color: #aaa;
+    font-style: italic;
+    margin: 0.5rem 0 0.5rem 0.7rem;
+}
+/* lists */
+.post-content ul,
+.post-content ol {
+    padding-left: 1.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.post-content li {
+    font-family: var(--dmsans);
+    line-height: 1.8;
+    color: var(--grey);
+    margin-bottom: 0.25rem;
+}
+
+.post-content li::marker {
+     color: var(--white-transparent);
+}
+/* horizontal rule */
+.post-content hr {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 1rem 0;
+}
+/* images */
+.post-content img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+/* links */
+.post-content a {
+    color: var(--white);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+/* bold and italic */
+.post-content strong {
+    color: var(--white);
+    font-weight: 600;
+}
